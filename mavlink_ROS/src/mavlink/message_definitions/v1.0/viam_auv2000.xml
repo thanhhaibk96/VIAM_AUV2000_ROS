@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<mavlink>
+  <include>ardupilotmega.xml</include>
+  <include>common.xml</include>
+  <!-- Vendors -->
+  <include>uAvionix.xml</include>
+  <include>icarous.xml</include>
+  <version>3</version>
+  <dialect>0</dialect>
+  <enums>
+    <enum name="MAV_CUSTOM_CMD">
+      <description>Commands to be executed by the MAV. They can be executed on user request, or as part of a mission script. If the action is used in a mission, the parameter mapping to the waypoint/mission message is as follows: Param 1, Param 2, Param 3, Param 4, X: Param 5, Y:Param 6, Z:Param 7. This command list is similar what ARINC 424 is for commercial aircraft: A data format how to interpret waypoint/mission data. NaN and INT32_MAX may be used in float/integer params (respectively) to indicate optional/default values (e.g. to use the component's current yaw or latitude rather than a specific value). See https://mavlink.io/en/guide/xml_schema.html#MAV_CMD for information about the structure of the MAV_CMD entries</description>
+      <entry value="533" name="MAV_CMD_SET_AUV_CONTROLLER" hasLocation="false" isDestination="false">
+          <description>Set AUV Controller:
+                      HEADING_PID : 1
+                      HEADING_SM : 2
+                      PITCH_PID : 3
+                      PITCH_SM : 4
+                      DEPTH_PID : 5
+                      DEPTH_SM : 6
+                      LOS_PID : 7
+                      LOS_SM : 8
+                      SPEED_PID : 9
+                      SPEED_SM : 10
+                      ROLL_PID : 11
+                      ROLL_SM : 12</description>
+          <param index="1">Select type of Controller</param>
+          <param index="2">0: Disable, 1: Enable</param>
+          <param index="3">Reserved</param>
+          <param index="4">Reserved</param>
+          <param index="5">Reserved</param>
+          <param index="6">Reserved</param>
+          <param index="7">Reserved</param>
+      </entry>
+      <entry value="534" name="MAV_CMD_ENABLE_AUV_LIGHT" hasLocation="false" isDestination="false">
+          <description>Enable/Disable Light Of AUV</description>
+          <param index="1">0: Disable, 1: Enable</param>
+          <param index="2">Reserved</param>
+          <param index="3">Reserved</param>
+          <param index="4">Reserved</param>
+          <param index="5">Reserved</param>
+          <param index="6">Reserved</param>
+          <param index="7">Reserved</param>
+      </entry>
+    </enum>
+  </enums>
+	<messages>
+	  <message id="396" name="CUSTOM_MSG_PISTOL">
+        <wip/>
+        <!-- This message is work-in-progress it can therefore change, and should NOT be used in stable production environments -->
+        <description>Information about a pistol'status of AUV</description>
+        <field type="uint32_t" name="time_boot_ms" units="ms">Timestamp (time since system boot).</field>
+        <field type="float" name="position">The position of Pistol in AUV</field>
+        <field type="float" name="motor_duty">The duty cycle (PWM) of Pistol's motor</field>
+        <field type="float" name="motor_temp_on_chip">The temperature of Pistol's motor</field>
+        <field type="float" name="motor_temp_ambient">The temperature of Pistol's motor</field>
+        <field type="float" name="motor_current">The current of Pistol's motor</field>
+        <field type="float" name="motor_rspeed">The current speed of Pistol's motor</field>
+        <field type="float" name="motor_dspeed">The desired speed of Pistol's motor</field>
+    </message>
+    <message id="397" name="CUSTOM_MSG_MASS_SHIFTER">
+        <wip/>
+        <!-- This message is work-in-progress it can therefore change, and should NOT be used in stable production environments -->
+        <description>Information about a mass shifter'status of AUV</description>
+        <field type="uint32_t" name="time_boot_ms" units="ms">Timestamp (time since system boot).</field>
+        <field type="float" name="position">The position of mass shifter in AUV</field>
+        <field type="float" name="motor_duty">The duty cycle (PWM) of mass shifter's motor</field>
+        <field type="float" name="motor_temp_on_chip">The temperature of mass shifter's motor</field>
+        <field type="float" name="motor_temp_ambient">The temperature of mass shifter's motor</field>
+        <field type="float" name="motor_current">The current of mass shifter's motor</field>
+        <field type="float" name="motor_rspeed">The current speed of mass shifter's motor</field>
+        <field type="float" name="motor_dspeed">The desired speed of mass shifter's motor</field>
+    </message>
+    <message id="398" name="CUSTOM_MSG_THRUSTER">
+        <wip/>
+        <!-- This message is work-in-progress it can therefore change, and should NOT be used in stable production environments -->
+        <description>Information about a thruster'status of AUV</description>
+        <field type="uint32_t" name="time_boot_ms" units="ms">Timestamp (time since system boot).</field>
+        <field type="float" name="motor_duty">The duty cycle (PWM) of thruster's motor</field>
+        <field type="float" name="motor_temp_on_chip">The temperature of thruster's motor</field>
+        <field type="float" name="motor_temp_ambient">The temperature of thruster's motor</field>
+        <field type="float" name="motor_current">The current of thruster's motor</field>
+        <field type="float" name="motor_rspeed">The current speed of mthruster's motor</field>
+        <field type="float" name="motor_dspeed">The desired speed of thruster's motor</field>
+    </message>
+	  <message id="399" name="CUSTOM_MSG_BOARD_ARM1">
+	       <wip/>
+	       <!-- This message is work-in-progress it can therefore change, and should NOT be used in stable production environments -->
+	       <description>Information about a board ARM1'status of AUV</description>
+	       <field type="uint32_t" name="time_boot_ms" units="ms">Timestamp (time since system boot).</field>
+         <field type="uint8_t" name="leak_sensor">Value of Leak Sensors</field>
+	       <!-- <field type="uint8_t" name="ls_pistol_athead">Limit switch of Pistol at head</field>
+	       <field type="uint8_t" name="ls_pistol_attail">Limit switch of Pistol at tail</field>
+	       <field type="uint8_t" name="ls_mass_shifter_athead">Limit switch of Mass-Shifter at head</field>
+	       <field type="uint8_t" name="ls_mass_shifter_attail">Limit switch of Mass-Shifter at tail</field> -->
+	       <field type="float" name="altimeter_in_metres">Depth in metres</field>
+	       <field type="float" name="altimeter_in_feet">Depth in feet</field>
+	       <field type="float" name="altimeter_in_fathoms">Depth in fathoms</field>
+         <field type="float" name="roll_motor_angle">Angle of Motor for Antiing Roll</field>
+	  </message>
+	  <message id="402" name="CUSTOM_MSG_BOARD_ARM2">
+	       <wip/>
+	       <!-- This message is work-in-progress it can therefore change, and should NOT be used in stable production environments -->
+	       <description>Information about a board ARM2'status of AUV</description>
+	       <field type="uint32_t" name="time_boot_ms" units="ms">Timestamp (time since system boot).</field>
+         <field type="uint8_t" name="leak_sensor">Value of Leak Sensors</field>
+	       <field type="float" name="rudder_position">Position of Rudder</field>
+	       <field type="float" name="rudder_speed">Speed of Rudder</field>
+	       <field type="float" name="rudder_load">Load of Rudder</field>
+	       <field type="float" name="rudder_voltage">Voltage of Rudder</field>
+	       <field type="float" name="rudder_temperature">Temperature of Rudder</field>
+	       <field type="float" name="keller_pa3_pressure">Pressure of Keller PA3</field>
+	       <field type="float" name="keller_pa3_temperature">Temperature of Keller PA3</field>
+         <field type="float" name="roll_motor_angle">Angle of Motor for Antiing Roll</field>
+	  </message>
+  </messages>
+</mavlink>

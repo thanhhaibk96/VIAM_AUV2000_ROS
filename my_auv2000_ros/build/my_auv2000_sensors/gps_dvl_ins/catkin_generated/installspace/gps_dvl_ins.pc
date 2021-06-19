@@ -1,0 +1,8 @@
+prefix=/home/hai_bker96/VIAM_AUV2000_ROS/my_auv2000_ros/install
+
+Name: gps_dvl_ins
+Description: Description of gps_dvl_ins
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy serial std_msgs libmavconn mavros_msgs nav_msgs sensor_msgs std_msgs_stamped auv_msgs_stamped

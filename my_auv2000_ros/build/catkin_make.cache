@@ -1,0 +1,2 @@
+auv2000_control:auv2000_description:auv2000_gazebo_simulation:mavconn:my_auv2000_driver/my_auv2000_acturtors:my_auv2000_gcs/gcs_transceiver:my_auv2000_msgs/auv_msgs_stamped:my_auv2000_msgs/std_msgs_stamped:my_auv2000_sensors/camera:my_auv2000_sensors/gps_dvl_ins:my_auv2000_sensors/tritech_micron:navigator:utils
+-DCATKIN_DEVEL_PREFIX=/home/hai_bker96/VIAM_AUV2000_ROS/my_auv2000_ros/devel -DCMAKE_INSTALL_PREFIX=/home/hai_bker96/VIAM_AUV2000_ROS/my_auv2000_ros/install -G Unix Makefiles

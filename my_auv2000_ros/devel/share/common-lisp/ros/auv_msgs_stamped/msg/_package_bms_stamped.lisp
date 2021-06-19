@@ -1,0 +1,14 @@
+(cl:in-package auv_msgs_stamped-msg)
+(cl:export '(BATTERYTOTAL-VAL
+          BATTERYTOTAL
+          BATTERYCAPACITY-VAL
+          BATTERYCAPACITY
+          BATTERYUSED-VAL
+          BATTERYUSED
+          BATTERYPERCENTAGE-VAL
+          BATTERYPERCENTAGE
+          BATTERYCURRENT-VAL
+          BATTERYCURRENT
+          BATERRYVOLTAGE-VAL
+          BATERRYVOLTAGE
+))

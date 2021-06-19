@@ -1,0 +1,1 @@
+/home/hai_bker96/VIAM_AUV2000_ROS/mavlink_ROS/devel/.private/mavros_extras/share/mavros_extras/cmake/mavros_extrasConfig-version.cmake
