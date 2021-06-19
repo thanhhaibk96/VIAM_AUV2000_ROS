@@ -69,7 +69,7 @@ bool CommandProtocol::requestCommandLong(CommandLong& srv)
     return reqSetArming.call(srv);
   case static_cast<uint16_t>(MAV_CMD::MISSION_START):
     return reqStartMission.call(srv);
-  case static_cast<uint16_t>(MAV_CUSTOM_CMD::CMD_SET_AUV_CONTROLLER):
+  case static_cast<uint16_t>(MAV_CMD::SET_AUV_CONTROLLER):
       return reqSetAUVController.call(srv);
   default:
     return false;

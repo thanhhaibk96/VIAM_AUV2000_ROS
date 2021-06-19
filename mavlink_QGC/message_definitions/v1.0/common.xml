@@ -1617,23 +1617,37 @@
         <param index="2">Focus value</param>
         <param index="3">Reserved (all remaining params)</param>
       </entry>
-      <entry value="533" name="MAV_CMD_SET_AUV_CONTROLLER">
-        <description>Set AUV Controller:
-                    HEADING_PID --> 1
-                    HEADING_SM --> 2
-                    PITCH_PID --> 3
-                    PITCH_SM --> 4
-                    DEPTH_PID --> 5
-                    DEPTH_SM --> 6
-                    LOS_PID --> 7
-                    LOS_SM --> 8</description>
-        <param index="1">Select type of Controller</param>
-        <param index="2">0: Disable, 1: Enable</param>
-        <param index="3">Reserved</param>
-        <param index="4">Reserved</param>
-        <param index="5">Reserved</param>
-        <param index="6">Reserved</param>
-        <param index="7">Reserved</param>
+      <entry value="533" name="MAV_CMD_SET_AUV_CONTROLLER" hasLocation="false" isDestination="false">
+          <description>Set AUV Controller:
+                      HEADING_PID : 1
+                      HEADING_SM : 2
+                      PITCH_PID : 3
+                      PITCH_SM : 4
+                      DEPTH_PID : 5
+                      DEPTH_SM : 6
+                      LOS_PID : 7
+                      LOS_SM : 8
+                      SPEED_PID : 9
+                      SPEED_SM : 10
+                      ROLL_PID : 11
+                      ROLL_SM : 12</description>
+          <param index="1">Select type of Controller</param>
+          <param index="2">0: Disable, 1: Enable</param>
+          <param index="3">Reserved</param>
+          <param index="4">Reserved</param>
+          <param index="5">Reserved</param>
+          <param index="6">Reserved</param>
+          <param index="7">Reserved</param>
+      </entry>
+      <entry value="534" name="MAV_CMD_ENABLE_AUV_LIGHT" hasLocation="false" isDestination="false">
+          <description>Enable/Disable Light Of AUV</description>
+          <param index="1">0: Disable, 1: Enable</param>
+          <param index="2">Reserved</param>
+          <param index="3">Reserved</param>
+          <param index="4">Reserved</param>
+          <param index="5">Reserved</param>
+          <param index="6">Reserved</param>
+          <param index="7">Reserved</param>
       </entry>
       <entry value="600" name="MAV_CMD_JUMP_TAG">
         <description>Tagged jump target. Can be jumped to with MAV_CMD_DO_JUMP_TAG.</description>

@@ -30,27 +30,6 @@ constexpr auto MAVLINK_VERSION = 3;
 // ENUM DEFINITIONS
 
 
-/** @brief Commands to be executed by the MAV. They can be executed on user request, or as part of a mission script. If the action is used in a mission, the parameter mapping to the waypoint/mission message is as follows: Param 1, Param 2, Param 3, Param 4, X: Param 5, Y:Param 6, Z:Param 7. This command list is similar what ARINC 424 is for commercial aircraft: A data format how to interpret waypoint/mission data. NaN and INT32_MAX may be used in float/integer params (respectively) to indicate optional/default values (e.g. to use the component's current yaw or latitude rather than a specific value). See https://mavlink.io/en/guide/xml_schema.html#MAV_CMD for information about the structure of the MAV_CMD entries */
-enum class MAV_CUSTOM_CMD
-{
-    CMD_SET_AUV_CONTROLLER=533, /* Set AUV Controller:
-                      HEADING_PID : 1
-                      HEADING_SM : 2
-                      PITCH_PID : 3
-                      PITCH_SM : 4
-                      DEPTH_PID : 5
-                      DEPTH_SM : 6
-                      LOS_PID : 7
-                      LOS_SM : 8
-                      SPEED_PID : 9
-                      SPEED_SM : 10
-                      ROLL_PID : 11
-                      ROLL_SM : 12 |Select type of Controller| 0: Disable, 1: Enable| Reserved| Reserved| Reserved| Reserved| Reserved|  */
-    CMD_ENABLE_AUV_LIGHT=534, /* Enable/Disable Light Of AUV |0: Disable, 1: Enable| Reserved| Reserved| Reserved| Reserved| Reserved| Reserved|  */
-};
-
-//! MAV_CUSTOM_CMD ENUM_END
-constexpr auto MAV_CUSTOM_CMD_ENUM_END = 535;
 
 
 } // namespace viam_auv2000

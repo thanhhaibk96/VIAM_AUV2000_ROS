@@ -16,8 +16,6 @@ using namespace mavlink::common;
 using namespace mavlink::common::msg;
 using namespace mavlink::viam_auv2000;
 using namespace mavlink::viam_auv2000::msg;
-using namespace mavlink::autoquad;
-using namespace mavlink::autoquad::msg;
 using namespace mavros_msgs;
 
 class GCSTransceiver;
